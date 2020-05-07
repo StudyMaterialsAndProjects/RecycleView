@@ -6,7 +6,17 @@ We can display the collection of Strings,collection of java Objects in the item.
 To Bridge a gap that is converting the Non-UI  elements to UI elemts we will use a Adapter.
 i.e to show the list of Strings to list of items.
 
+
+The main Reason switching from ArrayAdapter to Base Adapter is
+In ArrayAdapter we can show only String type Arrays.
+If we want to show Object type non-Ui elements into UI elements then we should go for Base Adapter.
+
 Disadvantages of Using Base Adapter.
 
 Here the View is getting inflated every time when we scroll.
 Each time creating a new View Object.Can be observed in the Log.
+we can verify it by adding a set for verification.
+
+
+OverComing the View Executing again and again.
+

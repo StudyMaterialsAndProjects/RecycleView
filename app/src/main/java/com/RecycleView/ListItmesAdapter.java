@@ -1,6 +1,7 @@
 package com.RecycleView;
 
 import android.content.Context;
+import android.util.ArraySet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Set;
 
 public class ListItmesAdapter extends BaseAdapter {
 
@@ -17,36 +19,32 @@ public class ListItmesAdapter extends BaseAdapter {
     List<Person> personList;
     Context context;
     LayoutInflater layoutInflater;
-
+    Set<View> viewSet;
 
     ListItmesAdapter(Context cons_context,List<Person> cons_personList){
                 this.context=cons_context;
                 this.personList=cons_personList;
-
+                this.viewSet=new ArraySet<>();
     }
 
 
     @Override
     public int getCount() {
-        System.out.println("FC getCount()");
         return personList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        System.out.println("FC getItem()");
         return personList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        System.out.println("FC getItemId()");
         return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        System.out.println("FC getView()");
             layoutInflater=LayoutInflater.from(this.context);
             final  Person person=personList.get(position);
             convertView=layoutInflater.inflate(R.layout.layout_person_row_item,null);
@@ -54,7 +52,8 @@ public class ListItmesAdapter extends BaseAdapter {
             ((TextView)convertView.findViewById(R.id.textViewLastName)).setText(person.getLastname());
             ((TextView)convertView.findViewById(R.id.textViewGender)).setText(person.getNationality());
             ((TextView)convertView.findViewById(R.id.textViewNationality)).setText((person.getGender()==Person.GENDER.MALE? "Male":"Female"));
-                Log.i(TAG,"Index = "+position+" : "+convertView);
+            viewSet.add(convertView);
+           Log.i(TAG,"Index = "+position+" : "+convertView+"Size of the Set = "+viewSet.size());
         return convertView;
     }
 }
