@@ -10,8 +10,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView listView;
     AppUtilityClass appUtilityClass;
+    ListItmesAdapter listItmesAdapter;
 
-    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         intializeView();
         getAppUtilityClass_Context();
-        intializeAdpaterData();
+        intializeAdapter();
         setListViewAdapter();
 
     }
@@ -30,11 +30,10 @@ public class MainActivity extends AppCompatActivity {
     private void getAppUtilityClass_Context(){
             appUtilityClass=AppUtilityClass.getStc_appUtilityClass(this);
     }
-    private void intializeAdpaterData(){
-        adapter=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,appUtilityClass.getNames());
+    private void intializeAdapter(){
+    listItmesAdapter=new ListItmesAdapter(this,appUtilityClass.getPeople());
     }
     private void setListViewAdapter(){
-        listView.setAdapter(adapter);
+        listView.setAdapter(listItmesAdapter);
     }
-
 }
