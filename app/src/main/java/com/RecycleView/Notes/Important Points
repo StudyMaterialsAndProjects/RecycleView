@@ -22,5 +22,12 @@ Google Io link for that getView() method executing multiple times as suggested b
 getView()  method will be executed a couple of times depending on how the widgets are alligned in the layout.
 
 
-OverComing the View Executing again and again.
+OverComing the getView() findViewbyId Executing again and again.
+
+This can be overcomed by using View Holder Desin pattern in BaseAdapter.
+View Holder Design pattern means making a separate class which holds all the individual views which are present in the layout.
+By using this Design pattern we can increase the Frames per second execution.
+In Video 4 at @ 5:30 we can see the performance how fast it can be made using ViewHolder Design pattern.
+
+
 

@@ -27,7 +27,6 @@ public class ListItmesAdapter extends BaseAdapter {
                 this.viewSet=new ArraySet<>();
     }
 
-
     @Override
     public int getCount() {
         return personList.size();
@@ -45,17 +44,39 @@ public class ListItmesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        PersonViewHolder personViewHolder; // Here i am not intializing the PersonViewHolder.
             if(convertView==null){
                 layoutInflater=LayoutInflater.from(this.context);
                 convertView=layoutInflater.inflate(R.layout.layout_person_row_item,null);
+                /**
+                 * if the View==null then only i am intalizing the Views.
+                 */
+                personViewHolder=new PersonViewHolder();
+                personViewHolder.mtextViewName=((TextView)convertView.findViewById(R.id.textViewName));
+                personViewHolder.mtextViewLastName=((TextView)convertView.findViewById(R.id.textViewName));
+                personViewHolder.mtextViewGender=((TextView)convertView.findViewById(R.id.textViewName));
+                personViewHolder.mtextViewNationality=((TextView)convertView.findViewById(R.id.textViewName));
+                convertView.setTag(personViewHolder); // Do some R and D on setTag.
+            }else{
+                personViewHolder=(PersonViewHolder)convertView.getTag();
             }
             final  Person person=personList.get(position);
-            ((TextView)convertView.findViewById(R.id.textViewName)).setText(person.getName());
-            ((TextView)convertView.findViewById(R.id.textViewLastName)).setText(person.getLastname());
-            ((TextView)convertView.findViewById(R.id.textViewGender)).setText(person.getNationality());
-            ((TextView)convertView.findViewById(R.id.textViewNationality)).setText((person.getGender()==Person.GENDER.MALE? "Male":"Female"));
-            viewSet.add(convertView);
+                personViewHolder.mtextViewName.setText(person.getName());
+                personViewHolder.mtextViewLastName.setText(person.getName());
+                personViewHolder.mtextViewGender.setText(person.getName());
+                personViewHolder.mtextViewNationality.setText((person.getGender()==Person.GENDER.MALE? "Male":"Female"));
+                viewSet.add(convertView);
            Log.i(TAG,"Index = "+position+" : "+convertView+"Size of the Set = "+viewSet.size());
         return convertView;
+    }
+
+    private static class PersonViewHolder{
+        /**
+         * This class will hold all the individual views required for the layout.
+         */
+        public TextView mtextViewName;
+        public TextView mtextViewLastName;
+        public TextView mtextViewGender;
+        public TextView mtextViewNationality;
     }
 }
