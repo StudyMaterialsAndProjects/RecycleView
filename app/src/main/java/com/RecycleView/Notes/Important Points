@@ -1,0 +1,7 @@
+RecycleView
+----------
+In earlier android we were using Custom Base Adapter for showing the list of items.
+We can display the collection of Strings,collection of java Objects in the item.
+
+To Bridge a gap that is converting the Non-UI  elements to UI elemts we will use a Adapter.
+i.e to show the list of Strings to list of items.
