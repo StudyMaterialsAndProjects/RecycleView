@@ -45,9 +45,11 @@ public class ListItmesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-            layoutInflater=LayoutInflater.from(this.context);
+            if(convertView==null){
+                layoutInflater=LayoutInflater.from(this.context);
+                convertView=layoutInflater.inflate(R.layout.layout_person_row_item,null);
+            }
             final  Person person=personList.get(position);
-            convertView=layoutInflater.inflate(R.layout.layout_person_row_item,null);
             ((TextView)convertView.findViewById(R.id.textViewName)).setText(person.getName());
             ((TextView)convertView.findViewById(R.id.textViewLastName)).setText(person.getLastname());
             ((TextView)convertView.findViewById(R.id.textViewGender)).setText(person.getNationality());

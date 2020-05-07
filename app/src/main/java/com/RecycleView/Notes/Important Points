@@ -17,6 +17,10 @@ Here the View is getting inflated every time when we scroll.
 Each time creating a new View Object.Can be observed in the Log.
 we can verify it by adding a set for verification.
 
+There is no Documenatation that why the getView() method will be executed so many times.
+Google Io link for that getView() method executing multiple times as suggested by google-->https://www.youtube.com/watch?v=wDBM6wVEO70
+getView()  method will be executed a couple of times depending on how the widgets are alligned in the layout.
+
 
 OverComing the View Executing again and again.
 
