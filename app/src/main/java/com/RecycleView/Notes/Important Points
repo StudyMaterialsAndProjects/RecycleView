@@ -55,6 +55,6 @@ Steps for construction of RecycleView:-
 Intial Steps for intialization of th RecycleView.(Important Points).
 ************************************************
 1)Intialize the adapter.
-2)Use the layout manager to set the layout to the recycleView
+2)Use the layout manager to set the layout to the recycleView.(Layout Manager helps you to align these layout in the RecycleView)
 3)User RecycleView to set the adapter.
 ************************************************
