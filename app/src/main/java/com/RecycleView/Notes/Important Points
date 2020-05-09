@@ -31,3 +31,30 @@ In Video 4 at @ 5:30 we can see the performance how fast it can be made using Vi
 
 
 
+Reason for Shifting from BaseAdapter to RecycleView:-
+
+1)List View were becoming more and more complicated.
+2)Recycling of views was not supported in the BaseAdapter,we need to implement as out of box feature in base Adapter.
+3)Data Binding in the Base Adapter was very primitive.(Developer needs to manage everything ,by default feature was not suppported).
+4)Animations on row items of ListView was cubersome(As adding the item and delete and update the items was very difficult in ListView).
+5)There is option for changing the postioning of row items in the listView.
+
+Features in the RecycleView:-
+1)Introduced View Holder Desgin pattern as build in feature RecycleVeiw.
+2)View Holder will be Central to reuse and recycle feature.
+3)separation of View Creation and DataBinding will be taken care.when compared in the base adapter ViewCreation and Data Binding are done the programmer
+as seen from the screenshot.(ViewCreation_DataBinding).These 2 operation are in a single method getView() in RecycleView its avoided.
+4)Efficient handling of the row items click and position handling of the items in the recycleView.
+
+
+Steps for construction of RecycleView:-
+1)Add the material depedency in build.gradle.
+2)Create a class which extends RecyclerView.Adapter<(MainClassName.InnerClass)> with Generic type having innner class.
+3)Inner class should extend RecycleView.Holder.And the constructor must be provided for the inner class with super keyword.
+
+Intial Steps for intialization of th RecycleView.(Important Points).
+************************************************
+1)Intialize the adapter.
+2)Use the layout manager to set the layout to the recycleView
+3)User RecycleView to set the adapter.
+************************************************
