@@ -1,6 +1,7 @@
 package com.RecycleView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         listAdapterWithRecycleView = new ListAdapterWithRecycleView(this, appUtilityClass.getPeople());
     }
     private void intializeLayoutManagertoRecycleView(){
-        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+        recyclerView.setLayoutManager(gridLayoutManager);
     }
 
     private void setlistAdapterWithRecycleViewr() {
