@@ -78,3 +78,5 @@ c)Grid Layout Managers:-
    If we want to change the orientation then we need to pass the 3 rd arguments.
    GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2,GridLayoutManager.HORIZONTAL,false);
     arguments:- context,row count,Orientation,"want the layout to be reverse or not"
+
+    Working with the spanSize, i.e row count.
