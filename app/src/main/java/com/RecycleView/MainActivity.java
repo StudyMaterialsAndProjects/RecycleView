@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -51,14 +52,8 @@ public class MainActivity extends AppCompatActivity {
         listAdapterWithRecycleView = new ListAdapterWithRecycleView(this, appUtilityClass.getPeople());
     }
     private void intializeLayoutManagertoRecycleView(){
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
-        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
-            @Override
-            public int getSpanSize(int position) {
-                return (position%3==0?2:1);  // Taking the postion and dividing it by 3.If the Remainder is 0 then span size = 2 else span size =1.
-            }
-        });
-        recyclerView.setLayoutManager(gridLayoutManager);
+        StaggeredGridLayoutManager staggeredGridLayoutManager=new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
     }
 
     private void setlistAdapterWithRecycleViewr() {

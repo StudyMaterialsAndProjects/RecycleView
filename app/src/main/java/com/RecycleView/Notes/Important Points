@@ -80,3 +80,7 @@ c)Grid Layout Managers:-
     arguments:- context,row count,Orientation,"want the layout to be reverse or not"
 
     Working with the spanSize, i.e row count.
+d)Stagrered Grid layout Manager:-
+   The difference between Normal Grid layout manager and Stagered Grid layout Manager is
+   Normal Grid Layout Manager:-All the view s will be of same size.
+   stagered Grid layout Manager:- All the View will be o f different size.
