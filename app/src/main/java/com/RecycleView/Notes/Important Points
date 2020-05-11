@@ -71,3 +71,7 @@ a)LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
    Normal Linear layout Managers.
 b)LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
    Arguments:- context,orientation,"True-->layout will get reversed,False -->layout will be normal"
+c)Grid Layout Managers:-
+   GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+   Arguments:-First arguments is context,second Argument is span i.e no of different rows u can have in the screen. Here the orientation is by default vertical.
+
