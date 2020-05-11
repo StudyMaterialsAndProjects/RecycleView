@@ -64,3 +64,10 @@ Android Supports 3 types of Layout Managers
 1)Linera layout managers.
 2)Grid layout Managers.
 3)Staggered Grid layout Managers.
+
+
+Linear Layout Manager:-
+a)LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+   Normal Linear layout Managers.
+b)LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
+   Arguments:- context,orientation,"True-->layout will get reversed,False -->layout will be normal"

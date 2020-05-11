@@ -51,7 +51,10 @@ public class MainActivity extends AppCompatActivity {
         listAdapterWithRecycleView = new ListAdapterWithRecycleView(this, appUtilityClass.getPeople());
     }
     private void intializeLayoutManagertoRecycleView(){
-       LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this);
+        /**
+         * Here the RecyclerView.HORIZONTAL is VERTICAL means it will be normal.
+         */
+       LinearLayoutManager linearLayoutManager=new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false);
         recyclerView.setLayoutManager(linearLayoutManager);
     }
 
