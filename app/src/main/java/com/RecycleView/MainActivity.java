@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         listAdapterWithRecycleView = new ListAdapterWithRecycleView(this, appUtilityClass.getPeople());
     }
     private void intializeLayoutManagertoRecycleView(){
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(this,2,GridLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(gridLayoutManager);
     }
 
